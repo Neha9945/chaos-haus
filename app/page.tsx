@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { IntroGate } from '@/components/intro/IntroGate';
+import IntroGate from '@/components/intro/IntroGate';
 import { ForestEntry } from '@/components/forest/ForestEntry';
 
 export default function Home() {
