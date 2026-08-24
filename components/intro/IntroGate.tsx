@@ -41,40 +41,37 @@
 // }
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 interface IntroGateProps {
   onEnter: () => void;
 }
 
 export default function IntroGate({ onEnter }: IntroGateProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoEnded, setVideoEnded] = useState(false);
+  const [isLeaving, setIsLeaving] = useState(false);
 
-  useEffect(() => {
-    const video = videoRef.current;
+  const handleEnter = () => {
+    setIsLeaving(true);
 
-    if (!video) return;
-
-    const handleVideoEnd = () => {
+    setTimeout(() => {
       onEnter();
-    };
-
-    video.addEventListener('ended', handleVideoEnd);
-
-    return () => {
-      video.removeEventListener('ended', handleVideoEnd);
-    };
-  }, [onEnter]);
+    }, 900);
+  };
 
   return (
-    <section className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0b0b0b] overflow-hidden">
-      
+    <section
+      className={`fixed inset-0 z-[9999] overflow-hidden bg-black transition-opacity duration-1000 ${
+        isLeaving ? 'opacity-0' : 'opacity-100'
+      }`}
+    >
+      {/* FULL SCREEN VIDEO */}
       <video
-        ref={videoRef}
         autoPlay
         muted
         playsInline
-        className="h-full w-full object-contain"
+        onEnded={() => setVideoEnded(true)}
+        className="absolute inset-0 h-full w-full object-cover"
       >
         <source
           src="/chaos-haus/videos/chaos-haus-intro.mp4"
@@ -82,6 +79,50 @@ export default function IntroGate({ onEnter }: IntroGateProps) {
         />
       </video>
 
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/10" />
+
+      {/* ENTER BUTTON */}
+      <div
+        className={`absolute bottom-12 left-1/2 z-10 -translate-x-1/2 transition-all duration-1000 ${
+          videoEnded
+            ? 'translate-y-0 opacity-100'
+            : 'translate-y-6 opacity-0 pointer-events-none'
+        }`}
+      >
+        <button
+          onClick={handleEnter}
+          className="
+            group
+            border border-white/30
+            bg-black/20
+            px-8
+            py-4
+            text-xs
+            font-medium
+            tracking-[0.35em]
+            text-white
+            transition-all
+            duration-500
+            hover:bg-white
+            hover:text-black
+          "
+        >
+          ENTER THE HAUS
+          <span className="ml-3 inline-block transition-transform duration-300 group-hover:translate-x-1">
+            →
+          </span>
+        </button>
+      </div>
+
+      {/* SUBTLE LOADING / BRAND DETAIL */}
+      <div
+        className={`absolute top-8 left-1/2 -translate-x-1/2 text-[9px] tracking-[0.4em] text-white/40 transition-opacity duration-1000 ${
+          videoEnded ? 'opacity-0' : 'opacity-100'
+        }`}
+      >
+        CHAOS HAUS®
+      </div>
     </section>
   );
 }
