@@ -26,7 +26,7 @@
 import { useState } from 'react';
 
 import IntroGate from '@/components/intro/IntroGate';
-import { ForestEntry } from '@/components/forest/ForestEntry';
+//import { ForestEntry } from '@/components/forest/ForestEntry';
 import Hero from '@/components/home/Hero';
 
 export default function Home() {
@@ -41,7 +41,7 @@ export default function Home() {
           <Hero />
 
           {/* Existing homepage sections */}
-          <ForestEntry />
+          
         </div>
       )}
     </main>
