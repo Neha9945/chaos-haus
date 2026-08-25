@@ -35,12 +35,12 @@ export default function EnterTheHaus() {
           </h2>
 
           <p>
-            A SMALL PIECE OF CHAOS.
-            <br />
-            A PLACE FOR THE ONES
-            <br />
-            WHO DON'T FIT NEATLY.
-          </p>
+  SOMEWHERE BETWEEN
+  <br />
+  ORDER AND CHAOS,
+  <br />
+  WE BUILT A HOME.
+</p>
 
           <button className="enter-haus-button">
             <span>DISCOVER OUR WORLD</span>
