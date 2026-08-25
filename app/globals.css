@@ -547,3 +547,458 @@ input:focus-visible {
     object-position: 60% center;
   }
 }
+/* ========================================
+   ENTER THE HAUS — SECTION 02
+======================================== */
+
+.enter-haus {
+  position: relative;
+  min-height: 100svh;
+
+  display: grid;
+  grid-template-columns: 46% 54%;
+
+  background: #e9e2d6;
+  color: #171714;
+
+  overflow: hidden;
+}
+
+
+/* IMAGE */
+
+.enter-haus-image {
+  position: relative;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background: #cfc5b5;
+}
+
+.enter-haus-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+
+  display: block;
+
+  transition:
+    transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+
+.enter-haus:hover .enter-haus-image img {
+  transform: scale(1.025);
+}
+
+
+/* subtle texture */
+
+.image-grain {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.08;
+
+  background-image:
+    repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      rgba(0,0,0,.2) 1px,
+      transparent 2px
+    );
+
+  mix-blend-mode: multiply;
+}
+
+
+/* RIGHT CONTENT */
+
+.enter-haus-content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding:
+    clamp(80px, 10vw, 150px)
+    clamp(45px, 8vw, 140px);
+
+  padding-bottom: 140px;
+}
+
+
+/* SECTION LABEL */
+
+.enter-haus-number {
+  position: absolute;
+
+  top: 52px;
+  left: clamp(45px, 8vw, 140px);
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  font-family: var(--font-mono);
+
+  font-size: 9px;
+  letter-spacing: 0.28em;
+
+  color: rgba(23, 23, 20, 0.55);
+}
+
+.enter-haus-number span {
+  width: 45px;
+  height: 1px;
+
+  background: rgba(23, 23, 20, 0.35);
+}
+
+
+/* MAIN COPY */
+
+.enter-haus-copy {
+  position: relative;
+
+  padding-left: clamp(35px, 4vw, 70px);
+}
+
+.enter-haus-line {
+  position: absolute;
+
+  top: 8px;
+  left: 0;
+
+  width: 1px;
+  height: 290px;
+
+  background: #b49a55;
+}
+
+
+/* HEADLINE */
+
+.enter-haus h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(4rem, 6vw, 7.5rem);
+
+  line-height: 0.78;
+
+  font-weight: 500;
+
+  letter-spacing: -0.055em;
+
+  color: #161614;
+}
+
+.enter-haus h2 em {
+  font-family: var(--font-body);
+
+  font-weight: 500;
+
+  font-style: italic;
+}
+
+.enter-haus h2 span {
+  color: #b49a55;
+}
+
+
+/* DESCRIPTION */
+
+.enter-haus-copy p {
+  margin-top: 38px;
+
+  font-family: var(--font-mono);
+
+  font-size: 10px;
+
+  line-height: 2;
+
+  letter-spacing: 0.22em;
+
+  color: rgba(23, 23, 20, 0.68);
+}
+
+
+/* BUTTON */
+
+.enter-haus-button {
+  margin-top: 38px;
+
+  padding: 0 0 13px;
+
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  gap: 42px;
+
+  border-bottom: 1px solid rgba(23, 23, 20, 0.45);
+
+  font-family: var(--font-mono);
+
+  font-size: 9px;
+
+  letter-spacing: 0.2em;
+
+  color: #171714;
+
+  transition: all 0.35s ease;
+}
+
+.enter-haus-button:hover {
+  border-color: #b49a55;
+
+  color: #8e773f;
+}
+
+.enter-arrow {
+  font-size: 18px;
+
+  transition: transform 0.35s ease;
+}
+
+.enter-haus-button:hover .enter-arrow {
+  transform: translateX(7px);
+}
+
+
+/* STAMP */
+
+.enter-haus-stamp {
+  position: absolute;
+
+  right: clamp(35px, 6vw, 100px);
+
+  bottom: 125px;
+
+  width: 110px;
+  height: 110px;
+
+  border: 1px solid rgba(23, 23, 20, 0.3);
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enter-haus-stamp strong {
+  font-family: var(--font-body);
+
+  font-size: 34px;
+
+  font-weight: 500;
+}
+
+
+/* decorative ring text */
+
+.stamp-ring {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-mono);
+
+  font-size: 6px;
+
+  letter-spacing: 0.16em;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+}
+
+
+/* PLUS */
+
+.enter-haus-plus {
+  position: absolute;
+
+  top: 42px;
+  right: 45px;
+
+  font-size: 36px;
+
+  font-weight: 200;
+
+  color: rgba(23, 23, 20, 0.55);
+}
+
+
+/* FOOTER */
+
+.enter-haus-footer {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+
+  padding: 0 clamp(28px, 5vw, 80px);
+
+  border-top: 1px solid rgba(23, 23, 20, 0.12);
+
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  letter-spacing: 0.28em;
+
+  color: rgba(23, 23, 20, 0.7);
+
+  z-index: 5;
+}
+
+.footer-divider {
+  width: 1px;
+  height: 14px;
+
+  background: rgba(23, 23, 20, 0.3);
+}
+
+
+/* DOTS */
+
+.enter-dots {
+  margin-left: auto;
+
+  display: flex;
+
+  gap: 10px;
+}
+
+.enter-dots span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  border: 1px solid #9d8345;
+}
+
+.enter-dots .active {
+  background: #171714;
+  border-color: #171714;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .enter-haus {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: auto;
+  }
+
+  .enter-haus-image {
+    min-height: 58svh;
+
+    height: 58svh;
+  }
+
+  .enter-haus-image img {
+    object-position: center;
+  }
+
+  .enter-haus-content {
+    min-height: 65svh;
+
+    padding:
+      90px
+      30px
+      130px;
+  }
+
+  .enter-haus-number {
+    top: 32px;
+    left: 30px;
+
+    font-size: 8px;
+  }
+
+  .enter-haus-copy {
+    padding-left: 25px;
+  }
+
+  .enter-haus-line {
+    height: 230px;
+  }
+
+  .enter-haus h2 {
+    font-size: clamp(3.8rem, 17vw, 6rem);
+  }
+
+  .enter-haus-copy p {
+    font-size: 8px;
+
+    letter-spacing: 0.15em;
+  }
+
+  .enter-haus-stamp {
+    width: 80px;
+    height: 80px;
+
+    right: 25px;
+    bottom: 105px;
+  }
+
+  .enter-haus-stamp strong {
+    font-size: 26px;
+  }
+
+  .enter-haus-plus {
+    top: 20px;
+    right: 20px;
+  }
+
+  .enter-haus-footer {
+    padding: 0 20px;
+
+    gap: 12px;
+
+    font-size: 6px;
+
+    letter-spacing: 0.16em;
+  }
+
+  .footer-divider {
+    display: none;
+  }
+
+  .enter-dots {
+    gap: 6px;
+  }
+}
