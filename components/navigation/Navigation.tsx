@@ -62,7 +62,7 @@ export function Navigation() {
         </motion.div>
 
         {/* Center Navigation */}
-        <div className="hidden md:flex gap-12 absolute left-1/2 transform -translate-x-1/2">
+       <div className="hidden md:flex gap-20 absolute left-1/2 -translate-x-1/2">
           {navItems.map((item, i) => (
             <NavLink key={i} item={item} isScrolled={isScrolled} />
           ))}
