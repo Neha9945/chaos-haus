@@ -25,7 +25,8 @@ const navVariants = {
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const scrollDirection = useScrollDirection();
-
+ const navColor = '#F3EFE4';
+  const navHoverColor = '#C5B37A';
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -53,7 +54,7 @@ export function Navigation() {
         {/* Logo */}
         <motion.div
           className="text-xs tracking-widest font-display"
-          style={{ color: COLORS.black }}
+         style={{ color: navColor }}
           whileHover={{ opacity: 0.6 }}
           transition={{ duration: 0.3 }}
         >
@@ -71,7 +72,7 @@ export function Navigation() {
         <div className="flex gap-8 items-center">
           <motion.button
             className="text-xs tracking-widest font-display hover:opacity-50 transition-opacity"
-            style={{ color: COLORS.black }}
+            style={{ color: navColor }}
             whileHover={{ opacity: 0.6 }}
             transition={{ duration: 0.3 }}
             aria-label="Search"
@@ -80,7 +81,7 @@ export function Navigation() {
           </motion.button>
           <motion.button
             className="text-xs tracking-widest font-display hover:opacity-50 transition-opacity"
-            style={{ color: COLORS.black }}
+            style={{ color: navColor }}
             whileHover={{ opacity: 0.6 }}
             transition={{ duration: 0.3 }}
             aria-label="Shopping bag"
@@ -98,29 +99,38 @@ interface NavLinkProps {
   isScrolled: boolean;
 }
 
-function NavLink({ item, isScrolled }: NavLinkProps) {
+function NavLink({ item }: NavLinkProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
-      className="relative"
+      className="relative cursor-pointer"
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
+      {/* Main navigation text */}
       <motion.a
         href={item.href || '#'}
         className="text-xs tracking-widest font-display block"
-        style={{ color: COLORS.black }}
-        animate={{ opacity: isHovered ? 0 : 1 }}
-        transition={{ duration: 0.2 }}
+        style={{ color: '#F3EFE4' }}
+        animate={{
+          opacity: isHovered ? 0 : 1,
+          y: isHovered ? -5 : 0,
+        }}
+        transition={{ duration: 0.25 }}
       >
         {item.label}
       </motion.a>
+
+      {/* Hover text */}
       <motion.div
-        className="absolute top-0 left-0 text-xs tracking-widest font-display"
-        style={{ color: COLORS.olive }}
-        animate={{ opacity: isHovered ? 1 : 0 }}
-        transition={{ duration: 0.2 }}
+        className="absolute top-0 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs tracking-widest font-display"
+        style={{ color: '#C5B37A' }}
+        animate={{
+          opacity: isHovered ? 1 : 0,
+          y: isHovered ? 0 : 5,
+        }}
+        transition={{ duration: 0.25 }}
       >
         {item.hover}
       </motion.div>
