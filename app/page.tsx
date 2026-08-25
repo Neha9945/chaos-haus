@@ -28,6 +28,7 @@ import { useState } from 'react';
 import IntroGate from '@/components/intro/IntroGate';
 //import { ForestEntry } from '@/components/forest/ForestEntry';
 import Hero from '@/components/home/Hero';
+import EnterTheHaus from '@/components/home/EnterTheHaus';
 
 export default function Home() {
   const [hasEntered, setHasEntered] = useState(false);
@@ -37,12 +38,11 @@ export default function Home() {
       {!hasEntered ? (
         <IntroGate onEnter={() => setHasEntered(true)} />
       ) : (
-        <div className="animate-home-reveal">
-          <Hero />
+       <div className="animate-home-reveal">
+  <Hero />
 
-          {/* Existing homepage sections */}
-          
-        </div>
+  <EnterTheHaus />
+</div>
       )}
     </main>
   );
