@@ -46,9 +46,9 @@ export default function TheUniform() {
         </p>
 
         <h2>
-          THE UNIFORM
+         THE THINGS
           <br />
-          <span>OF CHAOS.</span>
+          <span>WE MAKE.</span>
         </h2>
 
         <div className="uniform-intro">
