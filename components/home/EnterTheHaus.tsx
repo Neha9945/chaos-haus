@@ -51,12 +51,16 @@ export default function EnterTheHaus() {
 
         {/* Brand stamp */}
         <div className="enter-haus-stamp">
-          <div className="stamp-ring">
-            <span>CHAOS • PERSPECTIVE • CHAOS • PERSPECTIVE •</span>
-          </div>
+  <div className="stamp-top">
+    CHAOS HAUS®
+  </div>
 
-          <strong>CH</strong>
-        </div>
+  <strong>CH</strong>
+
+  <div className="stamp-bottom">
+    EST. 2026
+  </div>
+</div>
 
         {/* Decorative plus */}
         <div className="enter-haus-plus">＋</div>
