@@ -566,13 +566,10 @@ input:focus-visible {
 
 
 /* IMAGE */
-
 .enter-haus-image {
   position: relative;
   min-height: 100svh;
-
   overflow: hidden;
-
   background: #cfc5b5;
 }
 
@@ -581,7 +578,9 @@ input:focus-visible {
   height: 100%;
 
   object-fit: cover;
-  object-position: center center;
+
+  /* Move the framing slightly outward */
+  object-position: 52% center;
 
   display: block;
 
