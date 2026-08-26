@@ -29,7 +29,7 @@ import IntroGate from '@/components/intro/IntroGate';
 //import { ForestEntry } from '@/components/forest/ForestEntry';
 import Hero from '@/components/home/Hero';
 import EnterTheHaus from '@/components/home/EnterTheHaus';
-
+import TheUniform from '@/components/home/TheUniform';
 export default function Home() {
   const [hasEntered, setHasEntered] = useState(false);
 
@@ -42,6 +42,7 @@ export default function Home() {
   <Hero />
 
   <EnterTheHaus />
+            <TheUniform />
 </div>
       )}
     </main>
