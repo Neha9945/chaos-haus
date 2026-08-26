@@ -7,7 +7,7 @@ export default function EnterTheHaus() {
       {/* IMAGE SIDE */}
       <div className="enter-haus-image">
         <img
-          src="public/images/enter-the-haus.JPG"
+          src="/chaos-haus/images/enter-the-haus.JPG"
           alt="The Chaos Haus otter"
         />
 
