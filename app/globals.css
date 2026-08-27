@@ -1949,15 +1949,12 @@ input:focus-visible {
 
   min-height: 100svh;
 
-  background: #11110f;
-
-  color: #e9e2d6;
+  background: #121313;
+  color: #e9e4da;
 
   overflow: hidden;
 
-  padding:
-    clamp(40px, 5vw, 75px)
-    clamp(35px, 5vw, 90px);
+  padding: 0 clamp(28px, 5vw, 80px);
 
   display: flex;
   flex-direction: column;
@@ -1965,69 +1962,123 @@ input:focus-visible {
 
 
 /* ========================================
+   BACKGROUND BRAND
+======================================== */
+
+.haus-code-bg {
+  position: absolute;
+
+  left: -2vw;
+  bottom: -7vw;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(12rem, 23vw, 31rem);
+
+  font-weight: 600;
+
+  line-height: 0.7;
+
+  letter-spacing: -0.08em;
+
+  white-space: nowrap;
+
+  color: rgba(255, 255, 255, 0.025);
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+/* ========================================
    TOP BAR
 ======================================== */
 
-.haus-code-top {
+.haus-code-topbar {
   position: relative;
+
+  z-index: 2;
+
+  height: 120px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  z-index: 3;
 }
+
 
 .haus-code-label {
   display: flex;
   align-items: center;
 
-  gap: 14px;
+  gap: 16px;
 
   font-family: var(--font-mono);
 
-  font-size: 8px;
+  font-size: 9px;
 
   letter-spacing: 0.28em;
 
-  color: rgba(233, 226, 214, 0.55);
+  color: rgba(233, 228, 218, 0.55);
 }
 
-.code-line {
+
+.haus-code-label .label-line {
   width: 48px;
   height: 1px;
 
-  background: rgba(233, 226, 214, 0.3);
+  background: rgba(233, 228, 218, 0.3);
 }
 
-.haus-code-mark {
+
+.haus-code-monogram {
   font-family: var(--font-body);
 
   font-size: 24px;
 
   color: #b49a55;
-
-  letter-spacing: -0.04em;
 }
 
 
 /* ========================================
-   MAIN STATEMENT
+   MAIN
 ======================================== */
 
 .haus-code-main {
   position: relative;
 
-  margin-top: auto;
-  margin-bottom: auto;
-
   z-index: 2;
 
-  max-width: 1150px;
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.65fr)
+    minmax(280px, 0.75fr);
+
+  align-items: center;
+
+  gap: clamp(50px, 10vw, 180px);
+
+  padding-bottom: 100px;
 }
 
-.haus-code-intro {
-  margin: 0 0 32px;
+
+/* ========================================
+   LEFT
+======================================== */
+
+.haus-code-left {
+  position: relative;
+
+  padding-top: 20px;
+}
+
+
+.haus-code-kicker {
+  margin-bottom: 38px;
 
   font-family: var(--font-mono);
 
@@ -2038,35 +2089,30 @@ input:focus-visible {
   color: #b49a55;
 }
 
-.haus-code-main h2 {
-  margin: 0;
 
-  display: flex;
-  flex-direction: column;
+.haus-code-left h2 {
+  margin: 0;
 
   font-family: var(--font-display);
 
-  font-size: clamp(4rem, 8.5vw, 10rem);
-
-  line-height: 0.82;
+  font-size: clamp(5rem, 9vw, 12rem);
 
   font-weight: 500;
 
+  line-height: 0.78;
+
   letter-spacing: -0.06em;
+
+  color: #ebe6dc;
 }
 
-.haus-code-main h2 > span {
+
+/* Italic second line */
+
+.haus-code-left h2 em {
   display: block;
-}
 
-
-/* THE SPECIAL LINE */
-
-.haus-code-outline {
-  color: transparent;
-
-  -webkit-text-stroke:
-    1px rgba(233, 226, 214, 0.65);
+  margin-left: clamp(30px, 7vw, 130px);
 
   font-family: var(--font-body);
 
@@ -2074,72 +2120,18 @@ input:focus-visible {
 
   font-weight: 400;
 
-  padding-left: clamp(20px, 10vw, 160px);
+  color: transparent;
+
+  -webkit-text-stroke: 1px rgba(233, 228, 218, 0.62);
 }
 
 
 /* ========================================
-   SIDE INFORMATION
+   SIGNATURE
 ======================================== */
 
-.haus-code-side {
-  position: absolute;
-
-  right: clamp(35px, 6vw, 100px);
-
-  top: 50%;
-
-  transform: translateY(-30%);
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 55px;
-
-  z-index: 3;
-}
-
-.code-detail {
-  display: flex;
-
-  gap: 20px;
-}
-
-.code-detail > span {
-  font-family: var(--font-mono);
-
-  font-size: 8px;
-
-  color: #b49a55;
-
-  letter-spacing: 0.15em;
-}
-
-.code-detail p {
-  margin: 0;
-
-  font-family: var(--font-mono);
-
-  font-size: 8px;
-
-  line-height: 2;
-
-  letter-spacing: 0.2em;
-
-  color: rgba(233, 226, 214, 0.58);
-}
-
-
-/* ========================================
-   OTTER APPROVED
-======================================== */
-
-.haus-otter-signature {
-  position: absolute;
-
-  left: clamp(35px, 5vw, 90px);
-
-  bottom: 100px;
+.haus-code-signature {
+  margin-top: 55px;
 
   display: flex;
   align-items: center;
@@ -2148,18 +2140,17 @@ input:focus-visible {
 
   font-family: var(--font-mono);
 
-  font-size: 7px;
+  font-size: 8px;
 
-  letter-spacing: 0.25em;
+  letter-spacing: 0.24em;
 
-  color: rgba(233, 226, 214, 0.5);
-
-  z-index: 3;
+  color: rgba(233, 228, 218, 0.48);
 }
 
-.otter-dot {
-  width: 7px;
-  height: 7px;
+
+.signature-dot {
+  width: 8px;
+  height: 8px;
 
   border-radius: 50%;
 
@@ -2171,85 +2162,126 @@ input:focus-visible {
 
 
 /* ========================================
-   CTA
+   RIGHT PRINCIPLES
 ======================================== */
 
-.haus-code-cta {
-  position: absolute;
-
-  right: clamp(35px, 6vw, 100px);
-
-  bottom: 100px;
-
+.haus-code-right {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 
-  gap: 35px;
+  gap: 42px;
 
-  padding-bottom: 14px;
+  max-width: 360px;
+
+  width: 100%;
+}
+
+
+.haus-code-principle {
+  display: grid;
+
+  grid-template-columns: 34px 1fr;
+
+  gap: 22px;
+
+  padding-bottom: 30px;
 
   border-bottom:
-    1px solid rgba(233, 226, 214, 0.35);
+    1px solid rgba(233, 228, 218, 0.1);
+}
 
-  text-decoration: none;
+
+.principle-number {
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  letter-spacing: 0.15em;
+
+  color: #b49a55;
+
+  padding-top: 3px;
+}
+
+
+.principle-label {
+  display: block;
+
+  margin-bottom: 15px;
 
   font-family: var(--font-mono);
 
   font-size: 8px;
 
-  letter-spacing: 0.22em;
+  letter-spacing: 0.28em;
 
-  color: #e9e2d6;
+  color: rgba(233, 228, 218, 0.5);
+}
 
-  z-index: 3;
+
+.haus-code-principle p {
+  margin: 0;
+
+  font-family: var(--font-mono);
+
+  font-size: 9px;
+
+  line-height: 2;
+
+  letter-spacing: 0.18em;
+
+  color: rgba(233, 228, 218, 0.82);
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.haus-code-button {
+  margin-top: 10px;
+
+  padding: 0 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  border-bottom:
+    1px solid rgba(233, 228, 218, 0.28);
+
+  color: #e9e4da;
+
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  letter-spacing: 0.2em;
 
   transition:
     color 0.3s ease,
     border-color 0.3s ease;
 }
 
-.haus-code-arrow {
-  font-size: 20px;
 
-  transition: transform 0.3s ease;
-}
-
-.haus-code-cta:hover {
+.haus-code-button:hover {
   color: #b49a55;
 
   border-color: #b49a55;
 }
 
-.haus-code-cta:hover .haus-code-arrow {
-  transform: translate(4px, -4px);
+
+.haus-code-arrow {
+  font-size: 18px;
+
+  transition: transform 0.3s ease;
 }
 
 
-/* ========================================
-   GIANT BACKGROUND TYPE
-======================================== */
-
-.haus-code-bg {
-  position: absolute;
-
-  left: -1vw;
-  bottom: -4vw;
-
-  font-family: var(--font-display);
-
-  font-size: clamp(9rem, 23vw, 30rem);
-
-  line-height: 0.7;
-
-  letter-spacing: -0.08em;
-
-  white-space: nowrap;
-
-  color: rgba(233, 226, 214, 0.025);
-
-  pointer-events: none;
-
-  user-select: none;
+.haus-code-button:hover .haus-code-arrow {
+  transform: translate(5px, -5px);
 }
 
 
@@ -2258,34 +2290,38 @@ input:focus-visible {
 ======================================== */
 
 .haus-code-footer {
-  position: absolute;
+  position: relative;
 
-  left: 0;
-  right: 0;
-  bottom: 0;
+  z-index: 2;
 
-  height: 55px;
+  height: 65px;
 
-  border-top:
-    1px solid rgba(233, 226, 214, 0.1);
+  display: grid;
 
-  padding:
-    0 clamp(35px, 5vw, 90px);
+  grid-template-columns: 1fr 1fr 1fr;
 
-  display: flex;
   align-items: center;
 
-  justify-content: space-between;
+  border-top:
+    1px solid rgba(233, 228, 218, 0.1);
 
   font-family: var(--font-mono);
 
   font-size: 7px;
 
-  letter-spacing: 0.25em;
+  letter-spacing: 0.28em;
 
-  color: rgba(233, 226, 214, 0.4);
+  color: rgba(233, 228, 218, 0.42);
+}
 
-  z-index: 4;
+
+.haus-code-footer .haus-code-est {
+  text-align: center;
+}
+
+
+.haus-code-footer span:last-child {
+  text-align: right;
 }
 
 
@@ -2296,81 +2332,73 @@ input:focus-visible {
 @media (max-width: 768px) {
 
   .haus-code {
-    min-height: 100svh;
+    min-height: auto;
 
-    padding:
-      35px
-      25px;
+    padding: 0 25px;
   }
 
-  .haus-code-mark {
+
+  .haus-code-topbar {
+    height: 90px;
+  }
+
+
+  .haus-code-monogram {
     font-size: 20px;
   }
 
+
   .haus-code-main {
-    margin-top: auto;
-    margin-bottom: auto;
+    grid-template-columns: 1fr;
+
+    align-items: start;
+
+    gap: 65px;
+
+    padding:
+      55px 0
+      90px;
   }
 
-  .haus-code-intro {
-    margin-bottom: 20px;
 
-    font-size: 7px;
+  .haus-code-left h2 {
+    font-size: clamp(4.5rem, 20vw, 8rem);
+
+    line-height: 0.8;
   }
 
-  .haus-code-main h2 {
-    font-size: clamp(3.8rem, 15vw, 6rem);
 
-    line-height: 0.86;
+  .haus-code-left h2 em {
+    margin-left: 20px;
   }
 
-  .haus-code-outline {
-    padding-left: 25px;
+
+  .haus-code-signature {
+    margin-top: 40px;
   }
 
-  .haus-code-side {
-    position: relative;
 
-    top: auto;
-    right: auto;
-
-    transform: none;
-
-    flex-direction: row;
-
-    gap: 25px;
-
-    margin-bottom: 105px;
+  .haus-code-right {
+    max-width: 100%;
   }
 
-  .code-detail {
-    gap: 8px;
+
+  .haus-code-principle {
+    grid-template-columns: 28px 1fr;
   }
 
-  .code-detail p {
-    font-size: 6px;
-  }
-
-  .haus-otter-signature {
-    left: 25px;
-    bottom: 75px;
-
-    font-size: 6px;
-  }
-
-  .haus-code-cta {
-    display: none;
-  }
 
   .haus-code-footer {
-    padding: 0 25px;
+    font-size: 6px;
 
-    font-size: 5px;
+    letter-spacing: 0.18em;
   }
+
 
   .haus-code-bg {
-    bottom: 2vw;
-
     font-size: 42vw;
+
+    bottom: -2vw;
   }
+
 }
