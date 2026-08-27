@@ -1940,3 +1940,437 @@ input:focus-visible {
 .built-footer > span:last-child {
   margin-left: auto;
 }
+/* ========================================
+   SECTION 05 — THE HAUS CODE
+======================================== */
+
+.haus-code {
+  position: relative;
+
+  min-height: 100svh;
+
+  background: #11110f;
+
+  color: #e9e2d6;
+
+  overflow: hidden;
+
+  padding:
+    clamp(40px, 5vw, 75px)
+    clamp(35px, 5vw, 90px);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ========================================
+   TOP BAR
+======================================== */
+
+.haus-code-top {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 3;
+}
+
+.haus-code-label {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  letter-spacing: 0.28em;
+
+  color: rgba(233, 226, 214, 0.55);
+}
+
+.code-line {
+  width: 48px;
+  height: 1px;
+
+  background: rgba(233, 226, 214, 0.3);
+}
+
+.haus-code-mark {
+  font-family: var(--font-body);
+
+  font-size: 24px;
+
+  color: #b49a55;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* ========================================
+   MAIN STATEMENT
+======================================== */
+
+.haus-code-main {
+  position: relative;
+
+  margin-top: auto;
+  margin-bottom: auto;
+
+  z-index: 2;
+
+  max-width: 1150px;
+}
+
+.haus-code-intro {
+  margin: 0 0 32px;
+
+  font-family: var(--font-mono);
+
+  font-size: 9px;
+
+  letter-spacing: 0.3em;
+
+  color: #b49a55;
+}
+
+.haus-code-main h2 {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(4rem, 8.5vw, 10rem);
+
+  line-height: 0.82;
+
+  font-weight: 500;
+
+  letter-spacing: -0.06em;
+}
+
+.haus-code-main h2 > span {
+  display: block;
+}
+
+
+/* THE SPECIAL LINE */
+
+.haus-code-outline {
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px rgba(233, 226, 214, 0.65);
+
+  font-family: var(--font-body);
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  padding-left: clamp(20px, 10vw, 160px);
+}
+
+
+/* ========================================
+   SIDE INFORMATION
+======================================== */
+
+.haus-code-side {
+  position: absolute;
+
+  right: clamp(35px, 6vw, 100px);
+
+  top: 50%;
+
+  transform: translateY(-30%);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 55px;
+
+  z-index: 3;
+}
+
+.code-detail {
+  display: flex;
+
+  gap: 20px;
+}
+
+.code-detail > span {
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  color: #b49a55;
+
+  letter-spacing: 0.15em;
+}
+
+.code-detail p {
+  margin: 0;
+
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  line-height: 2;
+
+  letter-spacing: 0.2em;
+
+  color: rgba(233, 226, 214, 0.58);
+}
+
+
+/* ========================================
+   OTTER APPROVED
+======================================== */
+
+.haus-otter-signature {
+  position: absolute;
+
+  left: clamp(35px, 5vw, 90px);
+
+  bottom: 100px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-family: var(--font-mono);
+
+  font-size: 7px;
+
+  letter-spacing: 0.25em;
+
+  color: rgba(233, 226, 214, 0.5);
+
+  z-index: 3;
+}
+
+.otter-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #b49a55;
+
+  box-shadow:
+    0 0 0 5px rgba(180, 154, 85, 0.08);
+}
+
+
+/* ========================================
+   CTA
+======================================== */
+
+.haus-code-cta {
+  position: absolute;
+
+  right: clamp(35px, 6vw, 100px);
+
+  bottom: 100px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 35px;
+
+  padding-bottom: 14px;
+
+  border-bottom:
+    1px solid rgba(233, 226, 214, 0.35);
+
+  text-decoration: none;
+
+  font-family: var(--font-mono);
+
+  font-size: 8px;
+
+  letter-spacing: 0.22em;
+
+  color: #e9e2d6;
+
+  z-index: 3;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.haus-code-arrow {
+  font-size: 20px;
+
+  transition: transform 0.3s ease;
+}
+
+.haus-code-cta:hover {
+  color: #b49a55;
+
+  border-color: #b49a55;
+}
+
+.haus-code-cta:hover .haus-code-arrow {
+  transform: translate(4px, -4px);
+}
+
+
+/* ========================================
+   GIANT BACKGROUND TYPE
+======================================== */
+
+.haus-code-bg {
+  position: absolute;
+
+  left: -1vw;
+  bottom: -4vw;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(9rem, 23vw, 30rem);
+
+  line-height: 0.7;
+
+  letter-spacing: -0.08em;
+
+  white-space: nowrap;
+
+  color: rgba(233, 226, 214, 0.025);
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.haus-code-footer {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 55px;
+
+  border-top:
+    1px solid rgba(233, 226, 214, 0.1);
+
+  padding:
+    0 clamp(35px, 5vw, 90px);
+
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+
+  font-family: var(--font-mono);
+
+  font-size: 7px;
+
+  letter-spacing: 0.25em;
+
+  color: rgba(233, 226, 214, 0.4);
+
+  z-index: 4;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .haus-code {
+    min-height: 100svh;
+
+    padding:
+      35px
+      25px;
+  }
+
+  .haus-code-mark {
+    font-size: 20px;
+  }
+
+  .haus-code-main {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .haus-code-intro {
+    margin-bottom: 20px;
+
+    font-size: 7px;
+  }
+
+  .haus-code-main h2 {
+    font-size: clamp(3.8rem, 15vw, 6rem);
+
+    line-height: 0.86;
+  }
+
+  .haus-code-outline {
+    padding-left: 25px;
+  }
+
+  .haus-code-side {
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    transform: none;
+
+    flex-direction: row;
+
+    gap: 25px;
+
+    margin-bottom: 105px;
+  }
+
+  .code-detail {
+    gap: 8px;
+  }
+
+  .code-detail p {
+    font-size: 6px;
+  }
+
+  .haus-otter-signature {
+    left: 25px;
+    bottom: 75px;
+
+    font-size: 6px;
+  }
+
+  .haus-code-cta {
+    display: none;
+  }
+
+  .haus-code-footer {
+    padding: 0 25px;
+
+    font-size: 5px;
+  }
+
+  .haus-code-bg {
+    bottom: 2vw;
+
+    font-size: 42vw;
+  }
+}
