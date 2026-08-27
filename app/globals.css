@@ -1587,7 +1587,7 @@ input:focus-visible {
   }
 }
 /* ========================================
-   SECTION 04 — BUILT DIFFERENTLY
+   BUILT DIFFERENTLY — SECTION 04
 ======================================== */
 
 .built-differently {
@@ -1600,10 +1600,20 @@ input:focus-visible {
 
   overflow: hidden;
 
-  padding:
-    48px
-    clamp(35px, 4vw, 70px)
-    82px;
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 30%)
+    minmax(500px, 48%)
+    minmax(220px, 22%);
+
+  grid-template-rows:
+    100px
+    minmax(280px, 1.05fr)
+    minmax(230px, 0.95fr)
+    70px;
+
+  padding: 0 54px;
 }
 
 
@@ -1612,59 +1622,60 @@ input:focus-visible {
 ======================================== */
 
 .built-topbar {
-  position: relative;
+  grid-column: 1 / -1;
+  grid-row: 1;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  z-index: 2;
+  position: relative;
+
+  z-index: 5;
 }
 
 .built-section-label {
   display: flex;
   align-items: center;
-
   gap: 16px;
 
   font-family: var(--font-mono);
 
   font-size: 9px;
+  letter-spacing: 0.25em;
 
-  letter-spacing: 0.28em;
-
-  color: rgba(23, 23, 20, 0.65);
+  color: rgba(23, 23, 20, 0.6);
 }
 
 .label-line {
-  width: 62px;
+  width: 48px;
   height: 1px;
 
-  background: rgba(23, 23, 20, 0.45);
+  background: rgba(23, 23, 20, 0.35);
 }
 
 .built-monogram {
   font-family: var(--font-body);
 
-  font-size: clamp(1.5rem, 2vw, 2.1rem);
+  font-size: 25px;
 
-  letter-spacing: -0.04em;
-
-  color: #9a824a;
+  color: #9d8345;
 }
 
 
 /* ========================================
-   TITLE
+   LEFT TITLE
 ======================================== */
 
 .built-title {
-  position: absolute;
+  grid-column: 1;
+  grid-row: 2 / 4;
 
-  top: 18%;
-  left: clamp(35px, 4vw, 70px);
+  align-self: center;
 
-  z-index: 2;
+  padding-right: 40px;
+
+  z-index: 3;
 }
 
 .built-title h2 {
@@ -1673,39 +1684,32 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
 
-  font-weight: 400;
+  font-size: clamp(3.8rem, 5vw, 6.8rem);
 
   line-height: 0.78;
+
+  letter-spacing: -0.055em;
 }
 
 .built-title h2 span {
   font-family: var(--font-display);
 
-  font-size: clamp(4rem, 6vw, 7.4rem);
+  font-style: normal;
 
-  letter-spacing: -0.06em;
-
-  color: #171714;
+  font-weight: 500;
 }
 
 .built-title h2 em {
   font-family: var(--font-body);
 
-  font-size: clamp(3.5rem, 5.3vw, 6.5rem);
-
   font-style: italic;
+
   font-weight: 500;
-
-  letter-spacing: -0.065em;
-
-  color: #171714;
 }
 
 
-/* TITLE DETAIL */
-
 .title-detail {
-  margin-top: 52px;
+  margin-top: 55px;
 }
 
 .title-detail > span {
@@ -1714,7 +1718,7 @@ input:focus-visible {
   width: 32px;
   height: 1px;
 
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 
   background: #b49a55;
 }
@@ -1726,24 +1730,24 @@ input:focus-visible {
 
   font-size: 9px;
 
-  line-height: 2.35;
+  line-height: 2.6;
 
   letter-spacing: 0.24em;
 
-  color: rgba(23, 23, 20, 0.72);
+  color: rgba(23, 23, 20, 0.65);
 }
 
 
 /* ========================================
-   IMAGE BASE
+   IMAGE 01 — MAIN FABRIC
 ======================================== */
 
 .built-image {
-  position: absolute;
+  position: relative;
 
   overflow: hidden;
 
-  background: #d4cabb;
+  background: #d5ccbd;
 }
 
 .built-image img {
@@ -1754,45 +1758,22 @@ input:focus-visible {
 
   object-fit: cover;
 
-  transition:
-    transform 1s cubic-bezier(.2,.7,.2,1);
+  transition: transform 0.8s cubic-bezier(.2,.7,.2,1);
 }
 
 .built-image:hover img {
   transform: scale(1.035);
 }
 
-.image-number {
-  position: absolute;
-
-  top: 18px;
-  left: 20px;
-
-  z-index: 2;
-
-  font-family: var(--font-mono);
-
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
-
-  letter-spacing: 0.04em;
-
-  color: #a48648;
-
-  text-shadow:
-    0 1px 8px rgba(255,255,255,.15);
-}
-
-
-/* ========================================
-   IMAGE 01 — HERO DETAIL
-======================================== */
 
 .built-image-one {
-  top: 12.5%;
-  left: 36%;
+  grid-column: 2;
+  grid-row: 2;
 
-  width: 46%;
-  height: 38%;
+  width: 100%;
+  height: calc(100% - 20px);
+
+  align-self: center;
 }
 
 .built-image-one img {
@@ -1800,69 +1781,57 @@ input:focus-visible {
 }
 
 
-/* ========================================
-   IMAGE 02 — COLLAR
-======================================== */
+/* IMAGE NUMBER */
 
-.built-image-two {
-  left: 26%;
-
-  bottom: 9.5%;
-
-  width: 24%;
-  height: 38%;
-}
-
-.built-image-two img {
-  object-position: center;
-}
-
-
-/* ========================================
-   IMAGE 03 — LABEL
-======================================== */
-
-.built-image-three {
-  left: 53.5%;
-
-  bottom: 9.5%;
-
-  width: 29%;
-  height: 38%;
-}
-
-.built-image-three img {
-  object-position: center;
-}
-
-
-/* ========================================
-   NOTES
-======================================== */
-
-.built-note {
+.image-number {
   position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  z-index: 2;
 
   font-family: var(--font-mono);
 
-  z-index: 2;
+  font-size: 11px;
+
+  letter-spacing: 0.18em;
+
+  color: #a58b4e;
+
+  mix-blend-mode: normal;
 }
 
-.built-note > span {
-  display: block;
 
+/* ========================================
+   RIGHT NOTES
+======================================== */
+
+.built-note {
+  position: relative;
+
+  z-index: 4;
+
+  padding-left: 55px;
+
+  font-family: var(--font-mono);
+
+  align-self: center;
+}
+
+.built-note span {
   font-size: 8px;
 
-  letter-spacing: 0.25em;
+  letter-spacing: 0.24em;
 
-  color: rgba(23, 23, 20, 0.6);
+  color: rgba(23, 23, 20, 0.5);
 }
 
 .note-line {
   width: 32px;
   height: 1px;
 
-  margin: 24px 0;
+  margin: 22px 0;
 
   background: #b49a55;
 }
@@ -1872,41 +1841,69 @@ input:focus-visible {
 
   font-size: 9px;
 
-  line-height: 2.4;
+  line-height: 2.5;
 
   letter-spacing: 0.22em;
 
-  color: rgba(23, 23, 20, 0.8);
+  color: rgba(23, 23, 20, 0.72);
 }
 
-
-/* NOTE 01 */
 
 .built-note-one {
-  top: 25%;
-  right: clamp(35px, 4vw, 70px);
-
-  width: 14%;
+  grid-column: 3;
+  grid-row: 2;
 }
-
-
-/* NOTE 02 */
 
 .built-note-two {
-  left: 8%;
-  bottom: 22%;
+  grid-column: 1;
+  grid-row: 3;
 
-  width: 14%;
+  align-self: end;
+
+  padding-bottom: 25px;
+}
+
+.built-note-three {
+  grid-column: 3;
+  grid-row: 3;
+
+  align-self: end;
+
+  padding-bottom: 25px;
 }
 
 
-/* NOTE 03 */
+/* ========================================
+   IMAGE 02 + 03
+======================================== */
 
-.built-note-three {
-  right: clamp(35px, 4vw, 70px);
-  bottom: 22%;
+.built-image-two {
+  grid-column: 2;
+  grid-row: 3;
 
-  width: 14%;
+  width: calc(50% - 12px);
+  height: calc(100% - 28px);
+
+  align-self: end;
+
+  justify-self: start;
+}
+
+.built-image-three {
+  grid-column: 2;
+  grid-row: 3;
+
+  width: calc(50% - 12px);
+  height: calc(100% - 28px);
+
+  align-self: end;
+
+  justify-self: end;
+}
+
+.built-image-two img,
+.built-image-three img {
+  object-position: center;
 }
 
 
@@ -1915,31 +1912,21 @@ input:focus-visible {
 ======================================== */
 
 .built-footer {
-  position: absolute;
-
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  height: 68px;
-
-  padding: 0 clamp(35px, 4vw, 70px);
-
-  border-top:
-    1px solid rgba(23, 23, 20, 0.14);
+  grid-column: 1 / -1;
+  grid-row: 4;
 
   display: flex;
-
   align-items: center;
-  justify-content: space-between;
+
+  border-top: 1px solid rgba(23, 23, 20, 0.12);
 
   font-family: var(--font-mono);
 
   font-size: 8px;
 
-  letter-spacing: 0.25em;
+  letter-spacing: 0.23em;
 
-  color: rgba(23, 23, 20, 0.65);
+  color: rgba(23, 23, 20, 0.58);
 }
 
 .built-footer-center {
@@ -1948,124 +1935,8 @@ input:focus-visible {
   left: 50%;
 
   transform: translateX(-50%);
-
-  white-space: nowrap;
 }
 
-
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 900px) {
-
-  .built-differently {
-    min-height: auto;
-
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 45px;
-
-    padding:
-      35px
-      22px
-      100px;
-  }
-
-
-  .built-title,
-  .built-image,
-  .built-note {
-    position: relative;
-
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-
-    width: 100%;
-  }
-
-
-  .built-title {
-    margin-top: 55px;
-  }
-
-
-  .built-title h2 span {
-    font-size: clamp(4rem, 18vw, 6rem);
-  }
-
-  .built-title h2 em {
-    font-size: clamp(3.3rem, 15vw, 5rem);
-  }
-
-
-  .title-detail {
-    margin-top: 35px;
-  }
-
-
-  .built-image {
-    height: 58vw;
-
-    min-height: 260px;
-  }
-
-
-  .built-image-one {
-    order: 2;
-  }
-
-  .built-note-one {
-    order: 3;
-  }
-
-  .built-note-two {
-    order: 4;
-  }
-
-  .built-image-two {
-    order: 5;
-  }
-
-  .built-image-three {
-    order: 6;
-  }
-
-  .built-note-three {
-    order: 7;
-  }
-
-
-  .built-note {
-    padding-left: 20px;
-
-    border-left:
-      1px solid rgba(180, 154, 85, 0.6);
-  }
-
-
-  .built-footer {
-    height: 60px;
-
-    padding: 0 20px;
-
-    font-size: 6px;
-
-    letter-spacing: 0.16em;
-  }
-
-
-  .built-footer-center {
-    display: none;
-  }
-
-
-  .built-monogram {
-    font-size: 1.4rem;
-  }
-
+.built-footer > span:last-child {
+  margin-left: auto;
 }
