@@ -58,9 +58,9 @@ export default function TheHausCode() {
               </span>
 
               <p>
-                OVERSIZED OR EASY.
+                OVERSIZED. RELAXED.
                 <br />
-                MAKE THE PIECE YOURS.
+                WORN YOUR WAY.
               </p>
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function TheHausCode() {
               <p>
                 SAME PIECE.
                 <br />
-                DIFFERENT PERSON.
+               YOUR VERSION.
               </p>
             </div>
           </div>
