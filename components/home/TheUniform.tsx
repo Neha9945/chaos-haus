@@ -5,19 +5,19 @@ const products = [
     number: '01',
     name: 'THE CHAOS TEE',
     type: 'OVERSIZED / HEAVYWEIGHT',
-    image: '/chaos-haus/images/product01.jpg',
+    image: '/chaos-haus/images/product01.png',
   },
   {
     number: '02',
     name: 'THE HAUS HOODIE',
     type: 'PREMIUM / HEAVYWEIGHT',
-    image: '/chaos-haus/images/product02.jpg',
+    image: '/chaos-haus/images/product02.png',
   },
   {
     number: '03',
     name: 'CHAOS ESSENTIALS',
     type: 'DROP 001',
-    image: '/chaos-haus/images/product03.jpg',
+    image: '/chaos-haus/images/product03.png',
   },
 ];
 
