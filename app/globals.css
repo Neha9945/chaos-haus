@@ -1673,7 +1673,7 @@ input:focus-visible {
 
   align-self: center;
 
-  padding-right: 40px;
+  padding-right: 37px;
 
   z-index: 3;
 }
@@ -1696,7 +1696,7 @@ input:focus-visible {
 
   font-style: normal;
 
-  font-weight: 500;
+  font-weight: 470;
 }
 
 .built-title h2 em {
@@ -1704,7 +1704,7 @@ input:focus-visible {
 
   font-style: italic;
 
-  font-weight: 500;
+  font-weight: 470;
 }
 
 
@@ -1812,7 +1812,7 @@ input:focus-visible {
 
   z-index: 4;
 
-  padding-left: 55px;
+  padding-left: 67px;
 
   font-family: var(--font-mono);
 
