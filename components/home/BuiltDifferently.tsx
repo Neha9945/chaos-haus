@@ -4,42 +4,55 @@ export default function BuiltDifferently() {
   return (
     <section className="built-differently">
 
-      {/* Section header */}
-      <div className="built-label">
-        <span className="built-label-line" />
-        03 / BUILT DIFFERENTLY
+      {/* TOP BAR */}
+      <div className="built-topbar">
+        <div className="built-section-label">
+          <span className="label-line" />
+          <span>03 / BUILT DIFFERENTLY</span>
+        </div>
+
+        <div className="built-monogram">
+          CH®
+        </div>
       </div>
 
-      {/* Main headline */}
-      <div className="built-heading">
+
+      {/* LEFT TITLE */}
+      <div className="built-title">
         <h2>
-          BUILT
-          <br />
+          <span>BUILT</span>
           <em>DIFFERENTLY.</em>
         </h2>
 
-        <div className="built-intro">
-          <span>THE WEIGHT.</span>
-          <span>THE CUT.</span>
-          <span>THE DETAILS.</span>
+        <div className="title-detail">
+          <span />
+          <p>
+            THE WEIGHT.
+            <br />
+            THE CUT.
+            <br />
+            THE DETAILS.
+          </p>
         </div>
       </div>
 
-      {/* Main visual */}
-      <div className="built-main-image">
+
+      {/* IMAGE 01 */}
+      <div className="built-image built-image-one">
+        <span className="image-number">01</span>
+
         <img
-          src="/chaos-haus/images/detail-01.jpg"
-          alt="Chaos Haus garment detail"
+          src="/images/detail-01.jpg"
+          alt="Chaos Haus garment embroidery detail"
         />
-
-        <div className="image-number">
-          01
-        </div>
       </div>
 
-      {/* Detail 01 */}
-      <div className="built-detail detail-one">
-        <span className="detail-number">01 / THE FABRIC</span>
+
+      {/* TEXT 01 */}
+      <div className="built-note built-note-one">
+        <span>01 / THE FABRIC</span>
+
+        <div className="note-line" />
 
         <p>
           HEAVYWEIGHT.
@@ -48,9 +61,12 @@ export default function BuiltDifferently() {
         </p>
       </div>
 
-      {/* Detail 02 */}
-      <div className="built-detail detail-two">
-        <span className="detail-number">02 / THE FIT</span>
+
+      {/* TEXT 02 */}
+      <div className="built-note built-note-two">
+        <span>02 / THE FIT</span>
+
+        <div className="note-line" />
 
         <p>
           OVERSIZED.
@@ -59,17 +75,34 @@ export default function BuiltDifferently() {
         </p>
       </div>
 
-      {/* Secondary image */}
-      <div className="built-small-image">
+
+      {/* IMAGE 02 */}
+      <div className="built-image built-image-two">
+        <span className="image-number">02</span>
+
         <img
-          src="/chaos-haus/images/detail-02.jpg"
-          alt="Chaos Haus clothing construction"
+          src="/images/detail-02.jpg"
+          alt="Chaos Haus collar construction"
         />
       </div>
 
-      {/* Detail 03 */}
-      <div className="built-detail detail-three">
-        <span className="detail-number">03 / THE MARK</span>
+
+      {/* IMAGE 03 */}
+      <div className="built-image built-image-three">
+        <span className="image-number">03</span>
+
+        <img
+          src="/images/detail-03.jpg"
+          alt="Chaos Haus garment label"
+        />
+      </div>
+
+
+      {/* TEXT 03 */}
+      <div className="built-note built-note-three">
+        <span>03 / THE MARK</span>
+
+        <div className="note-line" />
 
         <p>
           THE DETAILS THAT
@@ -78,13 +111,10 @@ export default function BuiltDifferently() {
         </p>
       </div>
 
-      {/* Decorative signature */}
-      <div className="built-signature">
-        CH®
-      </div>
 
-      {/* Footer */}
+      {/* FOOTER */}
       <div className="built-footer">
+
         <span>CHAOS HAUS®</span>
 
         <span className="built-footer-center">
@@ -92,6 +122,7 @@ export default function BuiltDifferently() {
         </span>
 
         <span>03 / 06</span>
+
       </div>
 
     </section>
