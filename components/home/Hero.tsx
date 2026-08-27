@@ -40,10 +40,10 @@ export default function Hero() {
           MADE FOR YOU.
         </p>
 
-        <button className="hero-button">
-          <span>EXPLORE THE HAUS</span>
-          <span className="hero-arrow">→</span>
-        </button>
+       <Link href="/shop" className="hero-button">
+  <span>EXPLORE THE HAUS</span>
+  <span className="hero-arrow">→</span>
+</Link>
 
       </div>
 
