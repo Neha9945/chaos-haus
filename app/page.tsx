@@ -32,6 +32,7 @@ import EnterTheHaus from '@/components/home/EnterTheHaus';
 import TheUniform from '@/components/home/TheUniform';
 import BuiltDifferently from '@/components/home/BuiltDifferently';
 import HausCode from '@/components/home/HausCode';
+import YourNextPiece from '@/components/home/YourNextPiece';
 export default function Home() {
   const [hasEntered, setHasEntered] = useState(false);
 
@@ -47,6 +48,7 @@ export default function Home() {
             <TheUniform />
          <BuiltDifferently />
          <HausCode />
+         <YourNextPiece />
 </div>
       )}
     </main>
