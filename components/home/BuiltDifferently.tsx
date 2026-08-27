@@ -42,7 +42,7 @@ export default function BuiltDifferently() {
         <span className="image-number">01</span>
 
         <img
-          src="/images/detail-01.jpg"
+          src="/images/detail01.jpeg"
           alt="Chaos Haus garment embroidery detail"
         />
       </div>
@@ -81,7 +81,7 @@ export default function BuiltDifferently() {
         <span className="image-number">02</span>
 
         <img
-          src="/images/detail-02.jpg"
+          src="/images/detail02.jpeg"
           alt="Chaos Haus collar construction"
         />
       </div>
@@ -92,7 +92,7 @@ export default function BuiltDifferently() {
         <span className="image-number">03</span>
 
         <img
-          src="/images/detail-03.jpg"
+          src="/images/detail03.jpeg"
           alt="Chaos Haus garment label"
         />
       </div>
