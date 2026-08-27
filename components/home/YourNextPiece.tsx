@@ -63,10 +63,10 @@ export default function YourNextPiece() {
 
           </div>
 
-          <button className="next-piece-button">
-            <span>ENTER THE SHOP</span>
-            <span className="next-piece-arrow">→</span>
-          </button>
+         <Link href="/shop" className="next-piece-button">
+  <span>ENTER THE SHOP</span>
+  <span className="next-piece-arrow">→</span>
+</Link>
 
         </div>
 
