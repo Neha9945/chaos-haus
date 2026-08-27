@@ -1,113 +1,108 @@
 'use client';
 
-export default function HausCode() {
+export default function TheHausCode() {
   return (
     <section className="haus-code">
 
-      {/* TOP LABEL */}
+      {/* BACKGROUND BRAND */}
+      <div className="haus-code-bg" aria-hidden="true">
+        CHAOS HAUS
+      </div>
 
-      <div className="haus-code-top">
+      {/* TOP BAR */}
+      <div className="haus-code-topbar">
         <div className="haus-code-label">
-          <span className="code-line" />
+          <span className="label-line" />
           <span>04 / THE HAUS CODE</span>
         </div>
 
-        <div className="haus-code-mark">
+        <div className="haus-code-monogram">
           CH®
         </div>
       </div>
 
-
-      {/* MAIN STATEMENT */}
-
+      {/* MAIN CONTENT */}
       <div className="haus-code-main">
 
-        <p className="haus-code-intro">
-          CLOTHING IS PERSONAL.
-        </p>
+        {/* LEFT */}
+        <div className="haus-code-left">
 
-        <h2>
-          <span>DON&apos;T WEAR</span>
+          <div className="haus-code-kicker">
+            CLOTHING. YOUR WAY.
+          </div>
 
-          <span className="haus-code-outline">
-            WHAT EVERYONE
-          </span>
-
-          <span>ELSE DOES.</span>
-        </h2>
-
-      </div>
-
-
-      {/* SIDE DETAILS */}
-
-      <div className="haus-code-side">
-
-        <div className="code-detail">
-          <span>01</span>
-
-          <p>
-            MADE FOR YOUR
+          <h2>
+            WEAR IT
             <br />
-            OWN WAY OF WEARING IT.
-          </p>
+
+            <em>YOUR WAY.</em>
+          </h2>
+
+          <div className="haus-code-signature">
+            <span className="signature-dot" />
+            <span>CHAOS HAUS APPROVED</span>
+          </div>
+
         </div>
 
-        <div className="code-detail">
-          <span>02</span>
 
-          <p>
-            OVERSIZED.
-            <br />
-            BUT NEVER OVERDONE.
-          </p>
+        {/* RIGHT */}
+        <div className="haus-code-right">
+
+          <div className="haus-code-principle">
+            <span className="principle-number">01</span>
+
+            <div>
+              <span className="principle-label">
+                YOUR FIT
+              </span>
+
+              <p>
+                OVERSIZED OR EASY.
+                <br />
+                MAKE THE PIECE YOURS.
+              </p>
+            </div>
+          </div>
+
+
+          <div className="haus-code-principle">
+            <span className="principle-number">02</span>
+
+            <div>
+              <span className="principle-label">
+                YOUR STYLE
+              </span>
+
+              <p>
+                SAME PIECE.
+                <br />
+                DIFFERENT PERSON.
+              </p>
+            </div>
+          </div>
+
+
+          <button className="haus-code-button">
+            <span>EXPLORE THE COLLECTION</span>
+            <span className="haus-code-arrow">↗</span>
+          </button>
+
         </div>
 
-      </div>
-
-
-      {/* OTTER SIGNATURE */}
-
-      <div className="haus-otter-signature">
-        <span className="otter-dot" />
-
-        <span>
-          OTTER APPROVED
-        </span>
-      </div>
-
-
-      {/* CTA */}
-
-      <a href="#shop" className="haus-code-cta">
-        <span>EXPLORE THE COLLECTION</span>
-
-        <span className="haus-code-arrow">↗</span>
-      </a>
-
-
-      {/* BACKGROUND DECORATION */}
-
-      <div className="haus-code-bg">
-        CHAOS HAUS
       </div>
 
 
       {/* FOOTER */}
-
       <div className="haus-code-footer">
 
-        <span>
-          CHAOS HAUS®
-        </span>
+        <span>CHAOS HAUS®</span>
 
-        <span>
+        <span className="haus-code-est">
           EST. 2026
         </span>
 
-        <span>
-          04 / 06
-        </span>
+        <span>04 / 06</span>
 
       </div>
 
