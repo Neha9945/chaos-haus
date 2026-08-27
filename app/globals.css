@@ -1673,7 +1673,7 @@ input:focus-visible {
 
   align-self: center;
 
-  padding-right: 37px;
+  padding-right: 55px;
 
   z-index: 3;
 }
@@ -1684,11 +1684,11 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
 
-  font-size: clamp(3.3rem, 5vw, 6.5rem);
+  font-size: clamp(3.2rem, 4.2vw, 5.8rem);
 
-  line-height: 0.78;
+  line-height: 0.82;
 
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
 }
 
 .built-title h2 span {
