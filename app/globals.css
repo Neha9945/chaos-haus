@@ -1587,7 +1587,7 @@ input:focus-visible {
   }
 }
 /* ========================================
-   BUILT DIFFERENTLY — SECTION 04
+   SECTION 04 — BUILT DIFFERENTLY
 ======================================== */
 
 .built-differently {
@@ -1595,138 +1595,170 @@ input:focus-visible {
 
   min-height: 100svh;
 
-  background: #e7dfd1;
+  background: #e9e2d6;
   color: #171714;
 
   overflow: hidden;
 
-  padding: clamp(110px, 12vw, 170px)
-           clamp(30px, 5vw, 85px)
-           100px;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(280px, 0.9fr)
-    minmax(280px, 0.8fr)
-    minmax(260px, 0.7fr);
-
-  grid-template-rows:
-    auto
-    1fr;
-
-  gap: clamp(35px, 5vw, 90px);
+  padding:
+    48px
+    clamp(35px, 4vw, 70px)
+    82px;
 }
 
 
-/* SECTION LABEL */
+/* ========================================
+   TOP BAR
+======================================== */
 
-.built-label {
-  position: absolute;
-
-  top: 45px;
-  left: clamp(30px, 5vw, 85px);
+.built-topbar {
+  position: relative;
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
-  gap: 14px;
+  z-index: 2;
+}
+
+.built-section-label {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
 
   font-family: var(--font-mono);
 
   font-size: 9px;
+
   letter-spacing: 0.28em;
 
-  color: rgba(23, 23, 20, 0.55);
+  color: rgba(23, 23, 20, 0.65);
 }
 
-.built-label-line {
-  width: 45px;
+.label-line {
+  width: 62px;
   height: 1px;
 
-  background: rgba(23, 23, 20, 0.35);
+  background: rgba(23, 23, 20, 0.45);
+}
+
+.built-monogram {
+  font-family: var(--font-body);
+
+  font-size: clamp(1.5rem, 2vw, 2.1rem);
+
+  letter-spacing: -0.04em;
+
+  color: #9a824a;
 }
 
 
-/* MAIN HEADING */
+/* ========================================
+   TITLE
+======================================== */
 
-.built-heading {
-  position: relative;
+.built-title {
+  position: absolute;
+
+  top: 18%;
+  left: clamp(35px, 4vw, 70px);
 
   z-index: 2;
-
-  padding-top: 20px;
 }
 
-.built-heading h2 {
+.built-title h2 {
   margin: 0;
 
+  display: flex;
+  flex-direction: column;
+
+  font-weight: 400;
+
+  line-height: 0.78;
+}
+
+.built-title h2 span {
   font-family: var(--font-display);
 
-  font-size: clamp(4.5rem, 7vw, 9rem);
-
-  line-height: 0.82;
-
-  font-weight: 500;
+  font-size: clamp(4rem, 6vw, 7.4rem);
 
   letter-spacing: -0.06em;
 
   color: #171714;
 }
 
-.built-heading h2 em {
+.built-title h2 em {
   font-family: var(--font-body);
 
-  font-weight: 500;
+  font-size: clamp(3.5rem, 5.3vw, 6.5rem);
 
   font-style: italic;
+  font-weight: 500;
+
+  letter-spacing: -0.065em;
+
+  color: #171714;
 }
 
 
-/* THREE WORD INTRO */
+/* TITLE DETAIL */
 
-.built-intro {
-  margin-top: 45px;
+.title-detail {
+  margin-top: 52px;
+}
 
-  display: flex;
-  flex-direction: column;
+.title-detail > span {
+  display: block;
 
-  gap: 10px;
+  width: 32px;
+  height: 1px;
+
+  margin-bottom: 22px;
+
+  background: #b49a55;
+}
+
+.title-detail p {
+  margin: 0;
 
   font-family: var(--font-mono);
 
   font-size: 9px;
 
-  letter-spacing: 0.3em;
+  line-height: 2.35;
 
-  color: rgba(23, 23, 20, 0.6);
+  letter-spacing: 0.24em;
+
+  color: rgba(23, 23, 20, 0.72);
 }
 
 
-/* MAIN IMAGE */
+/* ========================================
+   IMAGE BASE
+======================================== */
 
-.built-main-image {
-  position: relative;
-
-  height: min(68vh, 720px);
+.built-image {
+  position: absolute;
 
   overflow: hidden;
 
-  background: #c9c0b2;
+  background: #d4cabb;
 }
 
-.built-main-image img {
+.built-image img {
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
-
   display: block;
 
-  transition: transform 1s cubic-bezier(.2,.7,.2,1);
+  object-fit: cover;
+
+  transition:
+    transform 1s cubic-bezier(.2,.7,.2,1);
 }
 
-.built-main-image:hover img {
+.built-image:hover img {
   transform: scale(1.035);
 }
 
@@ -1736,154 +1768,304 @@ input:focus-visible {
   top: 18px;
   left: 20px;
 
+  z-index: 2;
+
   font-family: var(--font-mono);
 
-  font-size: 9px;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
 
-  letter-spacing: 0.25em;
+  letter-spacing: 0.04em;
 
-  color: rgba(255, 255, 255, 0.75);
+  color: #a48648;
+
+  text-shadow:
+    0 1px 8px rgba(255,255,255,.15);
 }
 
 
-/* DETAILS */
+/* ========================================
+   IMAGE 01 — HERO DETAIL
+======================================== */
 
-.built-detail {
-  position: relative;
+.built-image-one {
+  top: 12.5%;
+  left: 36%;
 
-  align-self: start;
-
-  font-family: var(--font-mono);
+  width: 46%;
+  height: 38%;
 }
 
-.detail-number {
+.built-image-one img {
+  object-position: center;
+}
+
+
+/* ========================================
+   IMAGE 02 — COLLAR
+======================================== */
+
+.built-image-two {
+  left: 26%;
+
+  bottom: 9.5%;
+
+  width: 24%;
+  height: 38%;
+}
+
+.built-image-two img {
+  object-position: center;
+}
+
+
+/* ========================================
+   IMAGE 03 — LABEL
+======================================== */
+
+.built-image-three {
+  left: 53.5%;
+
+  bottom: 9.5%;
+
+  width: 29%;
+  height: 38%;
+}
+
+.built-image-three img {
+  object-position: center;
+}
+
+
+/* ========================================
+   NOTES
+======================================== */
+
+.built-note {
+  position: absolute;
+
+  font-family: var(--font-mono);
+
+  z-index: 2;
+}
+
+.built-note > span {
   display: block;
-
-  margin-bottom: 18px;
 
   font-size: 8px;
 
-  letter-spacing: 0.26em;
+  letter-spacing: 0.25em;
 
-  color: rgba(23, 23, 20, 0.5);
+  color: rgba(23, 23, 20, 0.6);
 }
 
-.built-detail p {
+.note-line {
+  width: 32px;
+  height: 1px;
+
+  margin: 24px 0;
+
+  background: #b49a55;
+}
+
+.built-note p {
   margin: 0;
 
-  font-size: 10px;
+  font-size: 9px;
 
-  line-height: 2;
+  line-height: 2.4;
 
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
 
-  color: rgba(23, 23, 20, 0.78);
-}
-
-.detail-one {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.detail-two {
-  grid-column: 3;
-  grid-row: 2;
-
-  margin-top: 60px;
+  color: rgba(23, 23, 20, 0.8);
 }
 
 
-/* SECOND IMAGE */
+/* NOTE 01 */
 
-.built-small-image {
-  grid-column: 1;
-  grid-row: 2;
+.built-note-one {
+  top: 25%;
+  right: clamp(35px, 4vw, 70px);
 
-  width: 70%;
-
-  align-self: end;
-
-  aspect-ratio: 1 / 1.15;
-
-  overflow: hidden;
-
-  background: #c9c0b2;
-}
-
-.built-small-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-
-  transition: transform 0.8s ease;
-}
-
-.built-small-image:hover img {
-  transform: scale(1.04);
+  width: 14%;
 }
 
 
-/* THIRD DETAIL */
+/* NOTE 02 */
 
-.detail-three {
-  grid-column: 2;
-  grid-row: 2;
+.built-note-two {
+  left: 8%;
+  bottom: 22%;
 
-  align-self: end;
-
-  margin-bottom: 30px;
+  width: 14%;
 }
 
 
-/* SIGNATURE */
+/* NOTE 03 */
 
-.built-signature {
-  position: absolute;
+.built-note-three {
+  right: clamp(35px, 4vw, 70px);
+  bottom: 22%;
 
-  top: 45px;
-  right: clamp(30px, 5vw, 85px);
-
-  font-family: var(--font-body);
-
-  font-size: 24px;
-
-  color: #a98d4f;
+  width: 14%;
 }
 
 
-/* FOOTER */
+/* ========================================
+   FOOTER
+======================================== */
 
 .built-footer {
   position: absolute;
 
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
 
-  height: 65px;
+  height: 68px;
+
+  padding: 0 clamp(35px, 4vw, 70px);
 
   border-top:
-    1px solid rgba(23, 23, 20, 0.12);
+    1px solid rgba(23, 23, 20, 0.14);
 
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 
-  padding:
-    0 clamp(30px, 5vw, 85px);
-
   font-family: var(--font-mono);
 
-  font-size: 7px;
+  font-size: 8px;
 
   letter-spacing: 0.25em;
 
-  color: rgba(23, 23, 20, 0.55);
+  color: rgba(23, 23, 20, 0.65);
 }
 
 .built-footer-center {
-  opacity: 0.7;
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .built-differently {
+    min-height: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding:
+      35px
+      22px
+      100px;
+  }
+
+
+  .built-title,
+  .built-image,
+  .built-note {
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+  }
+
+
+  .built-title {
+    margin-top: 55px;
+  }
+
+
+  .built-title h2 span {
+    font-size: clamp(4rem, 18vw, 6rem);
+  }
+
+  .built-title h2 em {
+    font-size: clamp(3.3rem, 15vw, 5rem);
+  }
+
+
+  .title-detail {
+    margin-top: 35px;
+  }
+
+
+  .built-image {
+    height: 58vw;
+
+    min-height: 260px;
+  }
+
+
+  .built-image-one {
+    order: 2;
+  }
+
+  .built-note-one {
+    order: 3;
+  }
+
+  .built-note-two {
+    order: 4;
+  }
+
+  .built-image-two {
+    order: 5;
+  }
+
+  .built-image-three {
+    order: 6;
+  }
+
+  .built-note-three {
+    order: 7;
+  }
+
+
+  .built-note {
+    padding-left: 20px;
+
+    border-left:
+      1px solid rgba(180, 154, 85, 0.6);
+  }
+
+
+  .built-footer {
+    height: 60px;
+
+    padding: 0 20px;
+
+    font-size: 6px;
+
+    letter-spacing: 0.16em;
+  }
+
+
+  .built-footer-center {
+    display: none;
+  }
+
+
+  .built-monogram {
+    font-size: 1.4rem;
+  }
+
 }
