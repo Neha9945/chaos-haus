@@ -1684,7 +1684,7 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
 
-  font-size: clamp(3.8rem, 5vw, 6.8rem);
+  font-size: clamp(3.3rem, 5vw, 6.5rem);
 
   line-height: 0.78;
 
@@ -1696,7 +1696,7 @@ input:focus-visible {
 
   font-style: normal;
 
-  font-weight: 470;
+  font-weight: 450;
 }
 
 .built-title h2 em {
@@ -1704,7 +1704,7 @@ input:focus-visible {
 
   font-style: italic;
 
-  font-weight: 470;
+  font-weight: 450;
 }
 
 
