@@ -1,37 +1,76 @@
 import ProductClient from './ProductClient';
 
-const products = {
-  'signature-tee': {
+export const products = {
+  signaturetee: {
+    slug: 'signaturetee',
+
     name: 'CHAOS HAUS SIGNATURE TEE',
+
     subtitle: 'DROP 001 / SIGNATURE SERIES',
+
     price: '₹2,490',
-    image: '/chaos-haus/images/product01.png',
+
     description:
       'A premium oversized essential built with intention. Clean lines, structured weight, and the Chaos Haus signature.',
+
     fit: 'OVERSIZED FIT',
-    fabric: 'PREMIUM COTTON',
+
+    fabric: 'PREMIUM HEAVYWEIGHT COTTON',
+
+    images: [
+      '/images/product01.png',
+      '/images/product01back.png',
+      '/images/product01detail01.png',
+      '/images/product01detail02.png',
+    ],
   },
 
-  'heavyweight-tee': {
+  heavyweighttee: {
+    slug: 'heavyweighttee',
+
     name: 'CHAOS HAUS HEAVYWEIGHT TEE',
+
     subtitle: 'DROP 001 / HEAVYWEIGHT SERIES',
+
     price: '₹2,790',
-    image: '/chaos-haus/images/product02.png',
+
     description:
-      'A heavier, structured silhouette designed to hold its shape. Built for weight, comfort, and everyday wear.',
+      'A heavyweight oversized piece designed to hold its shape. Structured, comfortable, and built for everyday wear.',
+
     fit: 'RELAXED OVERSIZED FIT',
+
     fabric: 'HEAVYWEIGHT PREMIUM COTTON',
+
+    images: [
+      '/images/product02.png',
+      '/images/product02back.png',
+      '/images/product02detail01.png',
+      '/images/product02detail02.png',
+    ],
   },
 
-  'essential-tee': {
-    name: 'CHAOS HAUS ESSENTIAL',
+  essentialtee: {
+    slug: 'essentialtee',
+
+    name: 'CHAOS HAUS ESSENTIAL TEE',
+
     subtitle: 'DROP 001 / ESSENTIAL SERIES',
+
     price: '₹2,490',
-    image: '/chaos-haus/images/product03.png',
+
     description:
-      'The everyday Chaos Haus piece. Minimal, comfortable, and designed to become part of your rotation.',
+      'A clean everyday Chaos Haus piece. Minimal in appearance, intentional in construction, and made to be worn repeatedly.',
+
     fit: 'EASY OVERSIZED FIT',
+
     fabric: 'PREMIUM COTTON',
+
+    images: [
+      '/images/product03.png',
+      '/images/product03back.png',
+      '/images/product03detail01.png',
+      '/images/product03detail02.png',
+    ],
   },
 };
 
@@ -44,19 +83,26 @@ export function generateStaticParams() {
 export default function ProductPage({
   params,
 }: {
-  params: { slug: string };
+  params: {
+    slug: string;
+  };
 }) {
   const product =
     products[params.slug as keyof typeof products];
 
   if (!product) {
-    return <div>PRODUCT NOT FOUND</div>;
+    return (
+      <main
+        style={{
+          minHeight: '100vh',
+          display: 'grid',
+          placeItems: 'center',
+        }}
+      >
+        PRODUCT NOT FOUND
+      </main>
+    );
   }
 
-  return (
-    <ProductClient
-      product={product}
-      slug={params.slug}
-    />
-  );
+  return <ProductClient product={product} />;
 }
