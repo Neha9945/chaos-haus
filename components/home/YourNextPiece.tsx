@@ -1,5 +1,7 @@
 'use client';
+
 import Link from 'next/link';
+
 export default function YourNextPiece() {
   return (
     <section className="your-next-piece">
