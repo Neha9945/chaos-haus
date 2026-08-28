@@ -5,7 +5,7 @@ const products = {
     name: 'CHAOS HAUS SIGNATURE TEE',
     subtitle: 'DROP 001 / SIGNATURE SERIES',
     price: '₹2,490',
-    image: '/chaos-haus/images/product-01.jpg',
+    image: '/chaos-haus/images/product01.png',
     description:
       'A premium oversized essential built with intention. Clean lines, structured weight, and the Chaos Haus signature.',
     fit: 'OVERSIZED FIT',
@@ -16,7 +16,7 @@ const products = {
     name: 'CHAOS HAUS HEAVYWEIGHT TEE',
     subtitle: 'DROP 001 / HEAVYWEIGHT SERIES',
     price: '₹2,790',
-    image: '/chaos-haus/images/product-02.jpg',
+    image: '/chaos-haus/images/product02.png',
     description:
       'A heavier, structured silhouette designed to hold its shape. Built for weight, comfort, and everyday wear.',
     fit: 'RELAXED OVERSIZED FIT',
@@ -27,7 +27,7 @@ const products = {
     name: 'CHAOS HAUS ESSENTIAL',
     subtitle: 'DROP 001 / ESSENTIAL SERIES',
     price: '₹2,490',
-    image: '/chaos-haus/images/product-03.jpg',
+    image: '/chaos-haus/images/product03.png',
     description:
       'The everyday Chaos Haus piece. Minimal, comfortable, and designed to become part of your rotation.',
     fit: 'EASY OVERSIZED FIT',
