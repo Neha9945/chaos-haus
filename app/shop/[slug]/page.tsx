@@ -39,7 +39,19 @@ const products = {
 };
 
 type ProductKey = keyof typeof products;
-
+export function generateStaticParams() {
+  return [
+    {
+      slug: 'signature-tee',
+    },
+    {
+      slug: 'heavyweight-tee',
+    },
+    {
+      slug: 'essential-tee',
+    },
+  ];
+}
 export default function ProductPage({
   params,
 }: {
