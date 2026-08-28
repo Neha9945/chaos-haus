@@ -3947,3 +3947,144 @@ input:focus-visible {
     display: none;
   }
 }
+/* ========================================
+   PRODUCT PAGE — PREMIUM REFINEMENTS
+======================================== */
+
+
+/* Make product page image taller */
+
+.product-image-main {
+  height: calc(100vh - 185px);
+  min-height: 720px;
+}
+
+
+/* Slightly adjust image crop */
+
+.product-image-main img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+
+/* Reduce product title slightly */
+
+.product-details h1 {
+  font-size: clamp(2.8rem, 3.8vw, 4.6rem);
+  line-height: 0.95;
+  max-width: 600px;
+}
+
+
+/* Make product information more compact */
+
+.product-details-top {
+  padding-bottom: 28px;
+}
+
+
+.product-subtitle {
+  margin-bottom: 18px;
+}
+
+
+/* Price should feel more important */
+
+.product-page-price {
+  margin-top: 20px;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  color: #171714;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* Tighten description */
+
+.product-description {
+  padding: 28px 0;
+}
+
+.product-description p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* Compact specifications */
+
+.product-specs {
+  padding: 24px 0;
+}
+
+
+/* Make spec labels cleaner */
+
+.product-specs span {
+  font-size: 7px;
+}
+
+.product-specs p {
+  font-size: 8px;
+}
+
+
+/* Reduce spacing around size section */
+
+.product-size-section {
+  padding: 28px 0;
+}
+
+
+/* Quantity slightly tighter */
+
+.product-quantity-section {
+  padding: 22px 0;
+}
+
+
+/* Add to bag should feel stronger */
+
+.add-to-bag {
+  margin-top: 25px;
+
+  min-height: 64px;
+
+  padding: 20px 24px;
+}
+
+
+/* Cleaner product note */
+
+.product-note {
+  margin-top: 12px;
+}
+
+
+/* ========================================
+   DESKTOP ALIGNMENT
+======================================== */
+
+@media (min-width: 901px) {
+
+  .product-gallery {
+    padding:
+      55px
+      55px
+      55px
+      clamp(35px, 4vw, 70px);
+  }
+
+  .product-details {
+    padding:
+      65px
+      clamp(45px, 5vw, 85px)
+      55px;
+  }
+
+}
