@@ -14,7 +14,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: 'ARCHIVE', hover: 'ENTER THE RECORD' },
   { label: 'WORLD', hover: 'EXPLORE THE HAUS' },
-  { label: 'SHOP', hover: 'ENTER THE WARDROBE', href: '/shop', },
+  { label: 'SHOP', hover: 'ENTER THE WARDROBE', href: '/chaos-haus/shop', },
 ];
 
 const navVariants = {
