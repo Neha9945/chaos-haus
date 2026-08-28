@@ -3,27 +3,46 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
+import ProductGallery from './ProductGallery';
+
+
 type Product = {
+  slug: string;
+
   name: string;
+
   subtitle: string;
+
   price: string;
-  image: string;
+
   description: string;
+
   fit: string;
+
   fabric: string;
+
+  images: string[];
 };
+
 
 export default function ProductClient({
   product,
-  slug,
 }: {
   product: Product;
-  slug: string;
 }) {
-  const [selectedSize, setSelectedSize] = useState('');
-  const [quantity, setQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] =
+    useState('');
 
-  const sizes = ['S', 'M', 'L', 'XL'];
+  const [quantity, setQuantity] =
+    useState(1);
+
+  const sizes = [
+    'S',
+    'M',
+    'L',
+    'XL',
+  ];
+
 
   const handleAddToBag = () => {
     if (!selectedSize) {
@@ -32,118 +51,161 @@ export default function ProductClient({
     }
 
     alert(
-      `${product.name} / SIZE ${selectedSize} / QTY ${quantity} ADDED TO BAG`
+      `${product.name} / SIZE ${selectedSize} / QUANTITY ${quantity} ADDED TO BAG`
     );
   };
 
-  return (
-    <main className="product-page">
 
-      <div className="product-back">
+  return (
+    <main className="productpage">
+
+      {/* BACK BAR */}
+
+      <div className="productback">
+
         <Link href="/shop">
           ← BACK TO SHOP
         </Link>
 
         <span>
-          DROP 001 / {slug.toUpperCase()}
+          DROP 001 / {product.slug.toUpperCase()}
         </span>
+
       </div>
 
-      <section className="product-main">
 
-        {/* IMAGE */}
-        <div className="product-gallery">
+      {/* MAIN PRODUCT AREA */}
 
-          <div className="product-image-main">
+      <section className="productmain">
 
-            <span className="product-gallery-number">
-              01 / 03
-            </span>
+        {/* PRODUCT GALLERY */}
 
-            <img
-              src={product.image}
-              alt={product.name}
-            />
-
-            <span className="product-image-brand">
-              CHAOS HAUS®
-            </span>
-
-          </div>
-
-        </div>
+        <ProductGallery
+          images={product.images}
+          productName={product.name}
+        />
 
 
-        {/* DETAILS */}
-        <div className="product-details">
+        {/* PRODUCT DETAILS */}
 
-          <div className="product-details-top">
+        <div className="productdetails">
 
-            <p className="product-subtitle">
+
+          <div className="productdetailstop">
+
+            <p className="productsubtitle">
               {product.subtitle}
             </p>
 
-            <h1>{product.name}</h1>
 
-            <span className="product-page-price">
+            <h1>
+              {product.name}
+            </h1>
+
+
+            <span className="productpageprice">
               {product.price}
             </span>
 
           </div>
 
 
-          <div className="product-description">
-            <p>{product.description}</p>
+          {/* DESCRIPTION */}
+
+          <div className="productdescription">
+
+            <p>
+              {product.description}
+            </p>
+
           </div>
 
 
           {/* SPECS */}
-          <div className="product-specs">
+
+          <div className="productspecs">
 
             <div>
-              <span>FIT</span>
-              <p>{product.fit}</p>
+
+              <span>
+                FIT
+              </span>
+
+              <p>
+                {product.fit}
+              </p>
+
             </div>
 
-            <div>
-              <span>FABRIC</span>
-              <p>{product.fabric}</p>
-            </div>
 
             <div>
-              <span>DROP</span>
-              <p>DROP 001 / CHAOS HAUS®</p>
+
+              <span>
+                FABRIC
+              </span>
+
+              <p>
+                {product.fabric}
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                DROP
+              </span>
+
+              <p>
+                DROP 001 / CHAOS HAUS®
+              </p>
+
             </div>
 
           </div>
 
 
           {/* SIZE */}
-          <div className="product-size-section">
 
-            <div className="product-option-header">
-              <span>SELECT SIZE</span>
+          <div className="productsizesection">
 
-              <button type="button">
+            <div className="productoptionheader">
+
+              <span>
+                SELECT SIZE
+              </span>
+
+              <button
+                type="button"
+              >
                 SIZE GUIDE
               </button>
+
             </div>
 
-            <div className="size-options">
+
+            <div className="sizeoptions">
 
               {sizes.map((size) => (
+
                 <button
                   type="button"
                   key={size}
-                  onClick={() => setSelectedSize(size)}
+
+                  onClick={() =>
+                    setSelectedSize(size)
+                  }
+
                   className={
                     selectedSize === size
-                      ? 'size-option active'
-                      : 'size-option'
+                      ? 'sizeoption active'
+                      : 'sizeoption'
                   }
                 >
                   {size}
                 </button>
+
               ))}
 
             </div>
@@ -152,27 +214,44 @@ export default function ProductClient({
 
 
           {/* QUANTITY */}
-          <div className="product-quantity-section">
 
-            <span>QUANTITY</span>
+          <div className="productquantitysection">
 
-            <div className="quantity-selector">
+            <span>
+              QUANTITY
+            </span>
+
+
+            <div className="quantityselector">
 
               <button
                 type="button"
+
                 onClick={() =>
-                  setQuantity(Math.max(1, quantity - 1))
+                  setQuantity(
+                    Math.max(
+                      1,
+                      quantity - 1
+                    )
+                  )
                 }
               >
                 −
               </button>
 
-              <span>{quantity}</span>
+
+              <span>
+                {quantity}
+              </span>
+
 
               <button
                 type="button"
+
                 onClick={() =>
-                  setQuantity(quantity + 1)
+                  setQuantity(
+                    quantity + 1
+                  )
                 }
               >
                 +
@@ -184,20 +263,31 @@ export default function ProductClient({
 
 
           {/* ADD TO BAG */}
+
           <button
             type="button"
-            className="add-to-bag"
+
+            className="addtobag"
+
             onClick={handleAddToBag}
           >
-            <span>ADD TO BAG</span>
+
+            <span>
+              ADD TO BAG
+            </span>
+
 
             <span>
               {product.price} →
             </span>
+
           </button>
 
-          <div className="product-note">
+
+          <div className="productnote">
+
             SELECT YOUR SIZE BEFORE ADDING TO BAG.
+
           </div>
 
         </div>
@@ -205,13 +295,25 @@ export default function ProductClient({
       </section>
 
 
-      {/* MARQUEE */}
-      <div className="product-marquee">
+      {/* BOTTOM BRAND BAR */}
 
-        <span>CHAOS HAUS®</span>
-        <span>BUILT DIFFERENTLY</span>
-        <span>DROP 001</span>
-        <span>CHAOS HAUS®</span>
+      <div className="productmarquee">
+
+        <span>
+          CHAOS HAUS®
+        </span>
+
+        <span>
+          BUILT DIFFERENTLY
+        </span>
+
+        <span>
+          DROP 001
+        </span>
+
+        <span>
+          CHAOS HAUS®
+        </span>
 
       </div>
 
